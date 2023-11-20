@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.Document
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.Documents.Core", "DemoPortal.Backend.Documents.Core\DemoPortal.Backend.Documents.Core.csproj", "{91695555-3921-438C-8C19-DB1A1F8D6D42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.Documents.DataAccess.Sql", "DemoPortal.Backend.Documents.DataAccess.Sql\DemoPortal.Backend.Documents.DataAccess.Sql.csproj", "{5DACA5B6-3744-4796-BE94-E55E5B7D89BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{91695555-3921-438C-8C19-DB1A1F8D6D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91695555-3921-438C-8C19-DB1A1F8D6D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91695555-3921-438C-8C19-DB1A1F8D6D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DACA5B6-3744-4796-BE94-E55E5B7D89BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DACA5B6-3744-4796-BE94-E55E5B7D89BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DACA5B6-3744-4796-BE94-E55E5B7D89BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DACA5B6-3744-4796-BE94-E55E5B7D89BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

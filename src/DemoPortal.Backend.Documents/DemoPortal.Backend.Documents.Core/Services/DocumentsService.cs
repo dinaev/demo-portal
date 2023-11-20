@@ -82,7 +82,12 @@ public class DocumentsService : IDocumentsService
         if (model.Text.Length > DocumentsConstants.DocumentTextMaxLenght)
             return DocumentsErrorModels.TextIsTooLong;
         
-        return await _documentsRepository.Update(model);
+        var document = await _documentsRepository.Update(model);
+        
+        if (document == default)
+            return DocumentsErrorModels.DocumentUpdatingError;
+
+        return document;
     }
 
     public async Task<BusinessResult> Delete(Guid id)
