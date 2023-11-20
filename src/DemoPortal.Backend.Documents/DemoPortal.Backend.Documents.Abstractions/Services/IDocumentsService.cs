@@ -8,7 +8,6 @@ public interface IDocumentsService
     /// <summary>
     /// Create a document
     /// </summary>
-    /// <remarks>Only 5 documents can be created per a user</remarks>
     /// <param name="model">Model to create a document</param>
     /// <returns></returns>
     Task<BusinessResult<DocumentGetModel>> Create(DocumentCreateModel model);
