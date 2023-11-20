@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.Documents.Api", "DemoPortal.Backend.Documents.Api\DemoPortal.Backend.Documents.Api.csproj", "{E89284D9-BCB7-44E7-84B3-2FF8AA7010D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.Documents.Abstractions", "DemoPortal.Backend.Documents.Abstractions\DemoPortal.Backend.Documents.Abstractions.csproj", "{5BA14F93-2B64-490C-BD86-157BA97002AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.Documents.Api.Contract", "DemoPortal.Backend.Documents.Api.Contract\DemoPortal.Backend.Documents.Api.Contract.csproj", "{BE1486BA-2016-411A-837E-1451094A8A07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{E89284D9-BCB7-44E7-84B3-2FF8AA7010D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E89284D9-BCB7-44E7-84B3-2FF8AA7010D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E89284D9-BCB7-44E7-84B3-2FF8AA7010D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA14F93-2B64-490C-BD86-157BA97002AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA14F93-2B64-490C-BD86-157BA97002AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA14F93-2B64-490C-BD86-157BA97002AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA14F93-2B64-490C-BD86-157BA97002AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE1486BA-2016-411A-837E-1451094A8A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1486BA-2016-411A-837E-1451094A8A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1486BA-2016-411A-837E-1451094A8A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1486BA-2016-411A-837E-1451094A8A07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
