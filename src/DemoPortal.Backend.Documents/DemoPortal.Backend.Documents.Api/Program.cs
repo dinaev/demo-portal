@@ -1,20 +1,16 @@
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using DemoPortal.Backend.Documents.Api;
 using DemoPortal.Backend.Documents.Core;
 using DemoPortal.Backend.Documents.DataAccess.Sql;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register dependency modules.
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-builder.Host.ConfigureContainer<ContainerBuilder>(
-    containerBuilder =>
-    {
-        containerBuilder.RegisterModule(new MapperDependencyModule());
-        containerBuilder.RegisterModule(new CoreDependencyModule());
-        containerBuilder.RegisterModule(new DataAccessDependencyModule());
-    });
+// Add automapper profiles.
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// Add data access layer.
+builder.Services.AddDocumentsDataAccessSql(builder.Configuration);
+
+// Add business logic.
+builder.Services.AddDocumentsCore();
 
 // Add services to the container.
 builder.Services.AddControllers();
