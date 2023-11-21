@@ -45,7 +45,7 @@ public class DocumentsController : Controller
     }
     
     [HttpGet]
-    public async Task<BusinessResult<DocumentListGetResponse>> GetList(DocumentListGetRequest request)
+    public async Task<BusinessResult<DocumentListGetResponse>> GetList([FromQuery]DocumentListGetRequest request)
     {
         var filter = _mapper.Map<DocumentListFilter>(request);
         
