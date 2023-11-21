@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using DemoPortal.Backend.Documents.Abstractions.Constants;
+﻿using DemoPortal.Backend.Documents.Abstractions.Constants;
 using DemoPortal.Backend.Documents.Abstractions.Errors;
 using DemoPortal.Backend.Documents.Abstractions.Models;
 using DemoPortal.Backend.Documents.Abstractions.Repositories;
@@ -10,12 +9,10 @@ namespace DemoPortal.Backend.Documents.Core.Services;
 
 public class DocumentsService : IDocumentsService
 {
-    private readonly IMapper _mapper;
     private readonly IDocumentsRepository _documentsRepository;
 
-    public DocumentsService(IMapper mapper, IDocumentsRepository documentsRepository)
+    public DocumentsService(IDocumentsRepository documentsRepository)
     {
-        _mapper = mapper;
         _documentsRepository = documentsRepository;
     }
 

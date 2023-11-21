@@ -61,7 +61,7 @@ public class DocumentsController : Controller
     }
     
     [HttpPut]
-    public async Task<BusinessResult<DocumentDto>> Update([FromBody]DocumentCreateRequest request)
+    public async Task<BusinessResult<DocumentDto>> Update([FromBody]DocumentUpdateRequest request)
     {
         var model = _mapper.Map<DocumentUpdateModel>(request);
             
