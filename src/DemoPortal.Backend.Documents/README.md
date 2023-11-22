@@ -37,3 +37,15 @@ dotnet ef database update 0 --project DemoPortal.Backend.Documents.DataAccess.Sq
 ```shell
 dotnet ef migrations remove --project DemoPortal.Backend.Documents.DataAccess.Sql --startup-project DemoPortal.Backend.Documents.Api
 ```
+
+# API Client
+## setup refit generator
+
+```shell
+dotnet tool install --global Refitter
+```
+
+## generate a refit interface
+```shell
+refitter http://localhost:5244/swagger/v1/swagger.json --namespace "DemoPortal.Backend.Documents.Api.Client" --output ./DemoPortal.Backend.Documents.Api.Client/IDocumentsApi.cs --no-accept-headers --interface-only
+```
