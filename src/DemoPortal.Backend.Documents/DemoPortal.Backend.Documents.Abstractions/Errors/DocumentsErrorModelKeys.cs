@@ -3,6 +3,7 @@
 public class DocumentsErrorModelKeys
 {
     public const string DocumentNotFound = "documents/not-found";
+    public const string DocumentIdNotProvided = "documents/id-not-provided";
     public const string DocumentUpdatingError = "documents/updating-error";
     public const string DocumentDeletionError = "documents/deletion-error";
     public const string UserNotProvided = "documents/user-not-provided";

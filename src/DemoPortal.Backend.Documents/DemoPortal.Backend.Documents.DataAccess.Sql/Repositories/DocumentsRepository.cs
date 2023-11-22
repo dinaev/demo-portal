@@ -48,8 +48,8 @@ public class DocumentsRepository : IDocumentsRepository
     public async Task<DocumentGetModel> Update(DocumentUpdateModel model)
     {
         var entity = await _context.Documents.SingleOrDefaultAsync(x => x.Id == model.Id);
-        if (entity == default)
-            return default;
+        if (entity == null)
+            return null;
         
         _mapper.Map(model, entity);
         _context.Documents.Update(entity);

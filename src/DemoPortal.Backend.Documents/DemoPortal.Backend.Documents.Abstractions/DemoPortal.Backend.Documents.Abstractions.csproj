@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="DemoPortal.Backend.Shared" Version="1.0.1" />
+      <PackageReference Include="DemoPortal.Backend.Shared" Version="1.0.2" />
     </ItemGroup>
 
 </Project>

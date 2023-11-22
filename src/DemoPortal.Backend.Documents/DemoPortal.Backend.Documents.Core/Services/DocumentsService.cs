@@ -41,6 +41,9 @@ public class DocumentsService : IDocumentsService
 
     public async Task<BusinessResult<DocumentGetModel>> GetById(Guid id)
     {
+        if (id == default)
+            return DocumentsErrorModels.DocumentIdNotProvided;
+        
         var document = await _documentsRepository.GetById(id);
         if (document == default)
             return DocumentsErrorModels.DocumentNotFound;
@@ -65,7 +68,7 @@ public class DocumentsService : IDocumentsService
             throw new ArgumentNullException(nameof(model));
         
         if (model.Id == default)
-            return DocumentsErrorModels.UserNotProvided;
+            return DocumentsErrorModels.DocumentIdNotProvided;
         
         if (string.IsNullOrEmpty(model.Title))
             return DocumentsErrorModels.TitleIsEmpty;
@@ -81,7 +84,7 @@ public class DocumentsService : IDocumentsService
         
         var document = await _documentsRepository.Update(model);
         
-        if (document == default)
+        if (document == null)
             return DocumentsErrorModels.DocumentUpdatingError;
 
         return document;
@@ -90,7 +93,7 @@ public class DocumentsService : IDocumentsService
     public async Task<BusinessResult> Delete(Guid id)
     {
         if (id == default)
-            return DocumentsErrorModels.UserNotProvided;
+            return DocumentsErrorModels.DocumentIdNotProvided;
         
         if (await _documentsRepository.Delete(id))
             return BusinessResult.Successful;

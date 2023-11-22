@@ -15,7 +15,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="DemoPortal.Backend.Shared" Version="1.0.1" />
+      <PackageReference Include="DemoPortal.Backend.Shared" Version="1.0.2" />
       <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
       <PackageReference Include="Refit" Version="7.0.0" />
       <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />

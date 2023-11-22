@@ -7,6 +7,9 @@ public class DocumentsErrorModels
     public static ErrorModel DocumentNotFound
         => new ErrorModel(DocumentsErrorModelKeys.DocumentNotFound, "Document not found");
     
+    public static ErrorModel DocumentIdNotProvided
+        => new ErrorModel(DocumentsErrorModelKeys.DocumentIdNotProvided, "Document ID not provided");
+    
     public static ErrorModel DocumentUpdatingError
         => new ErrorModel(DocumentsErrorModelKeys.DocumentUpdatingError, "Error occured during document updating");
     
