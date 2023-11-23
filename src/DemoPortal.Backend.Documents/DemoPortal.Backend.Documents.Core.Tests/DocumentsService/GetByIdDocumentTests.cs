@@ -43,7 +43,7 @@ public class GetByIdDocumentTests
     }
     
     [Fact]
-    public async Task GetById_DefaultId_ReturnsErrorDocumentIdNotProvided()
+    public async Task GetById_DefaultDocumentId_ReturnsErrorDocumentIdNotProvided()
     {
         // Arrange.
         var id = Guid.Empty;

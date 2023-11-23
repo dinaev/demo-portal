@@ -43,5 +43,13 @@ namespace DemoPortal.Backend.Documents.Api.Client
         /// <param name="id">Document identifier</param>
         [Delete("/documents/{id}")]
         Task<BusinessResult> Delete(Guid id);
+        
+        /// <summary>
+        /// Check if a document exists with specified user ID and document ID
+        /// </summary>
+        /// <param name="userId">User identifier</param>
+        /// <param name="documentId">Document identifier</param>
+        [Get("/documents/exists")]
+        Task<BusinessResult> Exists(Guid userId, Guid documentId);
     }
 }

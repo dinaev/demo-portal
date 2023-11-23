@@ -100,4 +100,18 @@ public class DocumentsService : IDocumentsService
         
         return DocumentsErrorModels.DocumentDeletionError;
     }
+
+    public async Task<BusinessResult> Exists(Guid userId, Guid documentId)
+    {
+        if (userId == default)
+            return DocumentsErrorModels.UserNotProvided;
+
+        if (documentId == default)
+            return DocumentsErrorModels.DocumentIdNotProvided;
+
+        if (await _documentsRepository.Exists(userId, documentId))
+            return BusinessResult.Successful;
+
+        return DocumentsErrorModels.DocumentNotFound;
+    }
 }

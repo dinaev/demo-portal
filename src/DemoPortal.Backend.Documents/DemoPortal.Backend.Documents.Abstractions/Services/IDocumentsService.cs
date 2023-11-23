@@ -40,4 +40,11 @@ public interface IDocumentsService
     /// <returns></returns>
     Task<BusinessResult> Delete(Guid id);
     
+    /// <summary>
+    /// Check if a document exists with specified user ID and document ID.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="documentId">Document ID</param>
+    /// <returns></returns>
+    Task<BusinessResult> Exists(Guid userId, Guid documentId);
 }

@@ -9,4 +9,5 @@ public interface IDocumentsRepository
     Task<DocumentGetSimpleModel[]> GetList(DocumentListFilter filter);
     Task<DocumentGetModel> Update(DocumentUpdateModel model);
     Task<bool> Delete(Guid id);
+    Task<bool> Exists(Guid userId, Guid documentId);
 }

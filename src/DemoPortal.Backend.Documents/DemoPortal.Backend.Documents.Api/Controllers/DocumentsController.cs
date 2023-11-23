@@ -52,7 +52,6 @@ public class DocumentsController : Controller
     /// <param name="id">Document identifier</param>
     /// <returns></returns>
     [HttpGet("{id:guid}")]
-    [ProducesResponseType(typeof(DocumentDto),StatusCodes.Status200OK)]
     public async Task<BusinessResult<DocumentDto>> Get(Guid id)
     {
         var result = await _documentsService.GetById(id);
@@ -113,5 +112,17 @@ public class DocumentsController : Controller
     public async Task<BusinessResult> Delete(Guid id)
     {
         return await _documentsService.Delete(id);
+    }
+    
+    /// <summary>
+    /// Check if a document exists with specified user ID and document ID
+    /// </summary>
+    /// <param name="userId">User identifier</param>
+    /// <param name="documentId">Document identifier</param>
+    /// <returns></returns>
+    [HttpGet("exists")]
+    public async Task<BusinessResult> Exists(Guid userId, Guid documentId)
+    {
+        return await _documentsService.Exists(userId, documentId);
     }
 }

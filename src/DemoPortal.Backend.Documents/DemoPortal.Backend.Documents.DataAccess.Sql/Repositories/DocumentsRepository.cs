@@ -72,4 +72,9 @@ public class DocumentsRepository : IDocumentsRepository
         _context.Entry(entity).State = EntityState.Detached;
         return true;
     }
+
+    public async Task<bool> Exists(Guid userId, Guid documentId)
+    {
+        return await _context.Documents.AnyAsync(x => x.UserId == userId && x.Id == documentId);
+    }
 }
