@@ -32,16 +32,16 @@
 
         public BusinessResult()
         {
-            IsSuccess = true;
+            IsSuccessful = true;
         }
 
         public BusinessResult(ErrorModel error)
         {
             Error = error;
-            IsSuccess = false;
+            IsSuccessful = false;
         }
 
-        public bool IsSuccess { get; set; }
+        public bool IsSuccessful { get; set; }
         public ErrorModel Error { get; set; }
 
         public static implicit operator BusinessResult(ErrorModel error) => new BusinessResult(error);
