@@ -4,6 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>warnings</Nullable>
+        <Authors>DemoPortal</Authors>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -13,6 +15,10 @@
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <DocumentationFile>bin\Release\DemoPortal.Backend.Documents.Api.Client.xml</DocumentationFile>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="DemoPortal.Backend.Shared" Version="1.0.2" />
@@ -32,6 +38,12 @@
       <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
         <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.14\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
       </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\DemoPortal.Backend.Documents.Abstractions\Errors\DocumentsErrorModelKeys.cs">
+        <Link>DocumentsErrorModelKeys.cs</Link>
+      </Compile>
     </ItemGroup>
 
 </Project>
