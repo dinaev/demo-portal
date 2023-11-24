@@ -49,3 +49,31 @@ dotnet tool install --global Refitter
 ```shell
 refitter http://localhost:5244/swagger/v1/swagger.json --namespace "DemoPortal.Backend.Documents.Api.Client" --output ./DemoPortal.Backend.Documents.Api.Client/IDocumentsApi.cs --no-accept-headers --interface-only
 ```
+
+## pack api client
+```shell
+dotnet pack -p:PackageVersion=1.0.1 DemoPortal.Backend.Documents.Api.Client/DemoPortal.Backend.Documents.Api.Client.csproj
+```
+
+## pack api contracts
+```shell
+dotnet pack -p:PackageVersion=1.0.1 DemoPortal.Backend.Documents.Api.Contract/DemoPortal.Backend.Documents.Api.Contract.csproj
+```
+
+
+## pack api client isolated version
+The problem described [here](https://github.com/dotnet/sdk/issues/12322)
+
+To prevent overriding version of dependency project package `DemoPortal.Backend.Documents.Api.Contract`, change `DemoPortal.Backend.Documents.Api.Client.csproj`
+```xml
+<PropertyGroup>
+    ...
+    <Version>$(IsolatedPackageVersion)</Version>
+    ...
+</PropertyGroup>
+```
+
+Then pack DemoPortal.Backend.Documents.Api.Client.csproj
+```shell
+dotnet pack -p:IsolatedPackageVersion=1.0.2 DemoPortal.Backend.Documents.Api.Client/DemoPortal.Backend.Documents.Api.Client.csproj
+```
