@@ -4,6 +4,9 @@ namespace DemoPortal.Backend.Documents.Abstractions.Errors;
 
 public class DocumentsErrorModels
 {
+    public static ErrorModel CommonError
+        => new ErrorModel(DocumentsErrorModelKeys.CommonError, "Document common error");
+    
     public static ErrorModel DocumentNotFound
         => new ErrorModel(DocumentsErrorModelKeys.DocumentNotFound, "Document not found");
     

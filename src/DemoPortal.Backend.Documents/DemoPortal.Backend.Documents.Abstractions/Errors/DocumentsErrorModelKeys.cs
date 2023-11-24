@@ -6,6 +6,16 @@
 public class DocumentsErrorModelKeys
 {
     /// <summary>
+    /// Exception
+    /// </summary>
+    public const string Exception = "documents/exception";
+    
+    /// <summary>
+    /// Documents common error
+    /// </summary>
+    public const string CommonError = "documents/common-error";
+    
+    /// <summary>
     /// Document not found
     /// </summary>
     public const string DocumentNotFound = "documents/not-found";

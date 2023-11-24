@@ -1,4 +1,5 @@
 using System.Reflection;
+using DemoPortal.Backend.Documents.Api.Filter;
 using DemoPortal.Backend.Documents.Core;
 using DemoPortal.Backend.Documents.DataAccess.Sql;
 
@@ -14,13 +15,15 @@ builder.Services.AddDocumentsDataAccessSql(builder.Configuration);
 builder.Services.AddDocumentsCore();
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => options.Filters.Add(typeof(HttpGlobalExceptionFilter)));
 
 // Add lowercase URLs.
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+// Add swagger with XML comments.
 builder.Services.AddSwaggerGen(options =>
 {
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
