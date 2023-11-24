@@ -1,4 +1,5 @@
 using System.Reflection;
+using DemoPortal.Backend.Documents.Api.Client;
 using DemoPortal.Backend.GateWay.Web.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
@@ -30,7 +31,16 @@ builder.Services
         options.RequireHttpsMetadata = keycloakOptions.RequireHttpsMetadata;
     });
 
+// Add automapper profiles.
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddControllers();
+
+// Add lowercase URLs.
+builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+
+// ADD documents API client.
+builder.Services.AddDocumentsApiClient(builder.Configuration);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

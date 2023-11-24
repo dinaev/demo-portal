@@ -17,6 +17,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+        <PackageReference Include="DemoPortal.Backend.Documents.Api.Client" Version="1.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.14"/>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.14"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14"/>
@@ -28,6 +31,10 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DemoPortal.Backend.GateWay.Contract\DemoPortal.Backend.GateWay.Contract.csproj" />
     </ItemGroup>
 
 </Project>
