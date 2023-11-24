@@ -4,26 +4,25 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>aspnet-DemoPortal.Backend.GateWay.Web-FDB0B1AE-895D-488B-B286-F15F3528D293</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DocumentationFile>bin\Debug\DemoPortal.Backend.GateWay.Web.xml</DocumentationFile>
+      <DocumentationFile>bin\Debug\DemoPortal.Backend.Documents.Api.xml</DocumentationFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DocumentationFile>bin\Release\DemoPortal.Backend.GateWay.Web.xml</DocumentationFile>
+      <DocumentationFile>bin\Release\DemoPortal.Backend.Documents.Api.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="12.0.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-        <PackageReference Include="DemoPortal.Backend.Documents.Api.Client" Version="1.0.1" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.14"/>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.14"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14"/>
-        <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
@@ -34,7 +33,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DemoPortal.Backend.GateWay.Contract\DemoPortal.Backend.GateWay.Contract.csproj" />
+      <ProjectReference Include="..\DemoPortal.Backend.Documents.Abstractions\DemoPortal.Backend.Documents.Abstractions.csproj" />
+      <ProjectReference Include="..\DemoPortal.Backend.Documents.Api.Contract\DemoPortal.Backend.Documents.Api.Contract.csproj" />
+      <ProjectReference Include="..\DemoPortal.Backend.Documents.Core\DemoPortal.Backend.Documents.Core.csproj" />
+      <ProjectReference Include="..\DemoPortal.Backend.Documents.DataAccess.Sql\DemoPortal.Backend.Documents.DataAccess.Sql.csproj" />
     </ItemGroup>
 
 </Project>

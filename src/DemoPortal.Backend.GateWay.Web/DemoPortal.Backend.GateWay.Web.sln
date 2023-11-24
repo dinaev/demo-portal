@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.GateWay.Web", "DemoPortal.Backend.GateWay.Web\DemoPortal.Backend.GateWay.Web.csproj", "{BBAE3848-6307-434E-931D-9643239911C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortal.Backend.GateWay.Contract", "DemoPortal.Backend.GateWay.Contract\DemoPortal.Backend.GateWay.Contract.csproj", "{00D8DD59-1631-41A1-964C-1717AE71822A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BBAE3848-6307-434E-931D-9643239911C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBAE3848-6307-434E-931D-9643239911C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBAE3848-6307-434E-931D-9643239911C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D8DD59-1631-41A1-964C-1717AE71822A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D8DD59-1631-41A1-964C-1717AE71822A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D8DD59-1631-41A1-964C-1717AE71822A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D8DD59-1631-41A1-964C-1717AE71822A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
