@@ -1,4 +1,4 @@
-namespace DemoPortal.Backend.GateWay.Web;
+namespace DemoPortal.Backend.GateWay.Api;
 
 public class WeatherForecast
 {

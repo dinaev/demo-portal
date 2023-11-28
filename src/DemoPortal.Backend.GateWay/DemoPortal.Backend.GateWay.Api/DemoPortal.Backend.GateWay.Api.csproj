@@ -4,16 +4,16 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>aspnet-DemoPortal.Backend.GateWay.Web-FDB0B1AE-895D-488B-B286-F15F3528D293</UserSecretsId>
+        <UserSecretsId>aspnet-DemoPortal.Backend.GateWay.Api-FDB0B1AE-895D-488B-B286-F15F3528D293</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DocumentationFile>bin\Debug\DemoPortal.Backend.GateWay.Web.xml</DocumentationFile>
+      <DocumentationFile>bin\Debug\DemoPortal.Backend.GateWay.Api.xml</DocumentationFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DocumentationFile>bin\Release\DemoPortal.Backend.GateWay.Web.xml</DocumentationFile>
+      <DocumentationFile>bin\Release\DemoPortal.Backend.GateWay.Api.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>

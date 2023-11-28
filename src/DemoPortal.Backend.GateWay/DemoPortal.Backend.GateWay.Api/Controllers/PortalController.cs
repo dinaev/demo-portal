@@ -4,7 +4,7 @@ using DemoPortal.Backend.Documents.Abstractions.Errors;
 using DemoPortal.Backend.Shared.BusinessLogic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoPortal.Backend.GateWay.Web.Controllers;
+namespace DemoPortal.Backend.GateWay.Api.Controllers;
 
 public class PortalController : ControllerBase
 {

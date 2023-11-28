@@ -1,4 +1,4 @@
-﻿namespace DemoPortal.Backend.GateWay.Web.Configuration;
+﻿namespace DemoPortal.Backend.GateWay.Api.Configuration;
 
 public class KeycloakOptions
 {

@@ -1,6 +1,6 @@
 using DemoPortal.Backend.Documents.Api.Client;
-using DemoPortal.Backend.GateWay.Web;
-using DemoPortal.Backend.GateWay.Web.Configuration;
+using DemoPortal.Backend.GateWay.Api;
+using DemoPortal.Backend.GateWay.Api.Configuration;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);

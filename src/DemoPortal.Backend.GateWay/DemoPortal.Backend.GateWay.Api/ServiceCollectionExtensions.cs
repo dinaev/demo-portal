@@ -1,9 +1,9 @@
 using System.Reflection;
-using DemoPortal.Backend.GateWay.Web.Configuration;
+using DemoPortal.Backend.GateWay.Api.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
-namespace DemoPortal.Backend.GateWay.Web;
+namespace DemoPortal.Backend.GateWay.Api;
 
 /// <summary>
 /// Service collection extensions
@@ -28,19 +28,6 @@ public static class ServiceCollectionExtensions
                 options.MetadataAddress = keycloakOptions.MetadataAddress;
                 options.Authority = keycloakOptions.Authority;
                 options.Audience = keycloakOptions.Audience;
-                options.RequireHttpsMetadata = keycloakOptions.RequireHttpsMetadata;
-            })
-            .AddOpenIdConnect(options =>
-            {
-                options.Authority = keycloakOptions.Authority;
-                options.ClientId = keycloakOptions.ClientId;
-                options.ClientSecret = keycloakOptions.ClientSecret;
-        
-                // "code" refers to the Authorization Code
-                options.ResponseType = "code";
-                options.SaveTokens = true;
-                options.Scope.Add("openid");
-                options.Scope.Add("profile");
                 options.RequireHttpsMetadata = keycloakOptions.RequireHttpsMetadata;
             });
         return services;

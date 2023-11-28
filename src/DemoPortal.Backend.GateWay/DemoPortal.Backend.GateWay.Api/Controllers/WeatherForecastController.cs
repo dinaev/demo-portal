@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoPortal.Backend.GateWay.Web.Controllers;
+namespace DemoPortal.Backend.GateWay.Api.Controllers;
 
 [Authorize]
 [ApiController]

@@ -1,11 +1,14 @@
 using AutoMapper;
 using DemoPortal.Backend.Documents.Api.Client;
-using ClientContract = DemoPortal.Backend.Documents.Api.Contract;
-using DemoPortal.Backend.GateWay.Contract.Documents;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ClientContract = DemoPortal.Backend.Documents.Api.Contract;
+using DocumentCreateRequest = DemoPortal.Backend.GateWay.Contract.Documents.DocumentCreateRequest;
+using DocumentDto = DemoPortal.Backend.GateWay.Contract.Documents.DocumentDto;
+using DocumentListGetResponse = DemoPortal.Backend.GateWay.Contract.Documents.DocumentListGetResponse;
+using DocumentUpdateRequest = DemoPortal.Backend.GateWay.Contract.Documents.DocumentUpdateRequest;
 
-namespace DemoPortal.Backend.GateWay.Web.Controllers;
+namespace DemoPortal.Backend.GateWay.Api.Controllers;
 
 [Authorize]
 [ApiController]
