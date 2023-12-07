@@ -41,6 +41,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.Services.MigrateDatabaseToLatestVersion();
 app.UseAuthorization();
 
 app.MapControllers();
