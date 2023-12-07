@@ -11,6 +11,8 @@ public class KeycloakOptions
     public string Audience { get; set; } = string.Empty;
     public string ClientId { get; set; } = string.Empty;
     public string ClientSecret { get; set; } = string.Empty;
+    public string Issuer { get; set; }
+    public string IssuerContainer { get; set; }
     public bool RequireHttpsMetadata { get; set; }
     public string SwaggerRedirectUrl { get; set; } = string.Empty;
 }
