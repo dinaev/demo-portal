@@ -29,6 +29,13 @@ public static class ServiceCollectionExtensions
                 options.Authority = keycloakOptions.Authority;
                 options.Audience = keycloakOptions.Audience;
                 options.RequireHttpsMetadata = keycloakOptions.RequireHttpsMetadata;
+                
+                // Make JWT valid within docker network.
+                options.TokenValidationParameters.ValidIssuers = new[]
+                {
+                    keycloakOptions.Issuer,
+                    keycloakOptions.IssuerContainer,
+                };
             });
         return services;
     }

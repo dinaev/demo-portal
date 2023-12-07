@@ -1,0 +1,85 @@
+version: "3.9"
+name: "demo-portal"
+networks:
+  local: 
+    name: "demo-portal-network"
+
+services:
+
+  demo-portal-gateway:
+    container_name: backend-gateway
+    image: demo-portal/backend-gateway
+    build:
+      context: ../src/DemoPortal.Backend.GateWay/
+      dockerfile: ./DemoPortal.Backend.GateWay.Api/Dockerfile
+    ports: 
+      - "5003:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Keycloak__Authority: http://localhost:5002/realms/demo-portal-realm
+      Keycloak__AuthorizationUrl: http://localhost:5002/realms/demo-portal-realm/protocol/openid-connect/auth
+      Keycloak__MetadataAddress: http://demo-portal-keycloak:8080/realms/demo-portal-realm/.well-known/openid-configuration
+      Keycloak__TokenUrl: http://localhost:5002/realms/demo-portal-realm/protocol/openid-connect/token
+      Keycloak__Audience: account
+      Keycloak__ClientId: demo-portal-client
+      Keycloak__ClientSecret: V2wx1atL57ivssltypA03OpCRcjvqRA4
+      Keycloak__Issuer: http://localhost:5002/realms/demo-portal-realm
+      Keycloak__IssuerContainer": http://demo-portal-keycloak:8080/realms/demo-portal-realm
+      Keycloak__RequireHttpsMetadata: false
+      Keycloak__SwaggerRedirectUrl: http://localhost:5003/swagger/oauth2-redirect.html
+      DocumentsApiSettings__BaseUrl: http://demo-portal-documents
+
+  demo-portal-documents:
+    container_name: backend-documents
+    image: demo-portal/backend-documents
+    build:
+      context: ../src/DemoPortal.Backend.Documents/
+      dockerfile: ./DemoPortal.Backend.Documents.Api/Dockerfile
+    ports: 
+      - "5004:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DemoPortalDocuments: "User ID=demouser;Password=demopass;Server=demo-portal-postgres;Port=5432;Database=DemoPortalDocuments"
+    depends_on:
+      demo-portal-postgres:
+          condition: service_healthy
+
+  demo-portal-postgres:
+    container_name: backend-db-postgres
+    image: postgres:15.5-alpine
+    ports: 
+      - "5001:5432"
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: demouser
+      POSTGRES_PASSWORD: demopass
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "demouser" ]
+      timeout: 30s
+      interval: 5s
+      retries: 3
+
+  demo-portal-keycloak:
+    container_name: backend-id-keycloak
+    image: quay.io/keycloak/keycloak:23.0.0
+    entrypoint: /opt/keycloak/bin/kc.sh start --import-realm
+    ports:
+      - "5002:8080"
+    depends_on:
+      demo-portal-postgres:
+        condition: service_healthy
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import
+      - ./data/keycloak/data:/opt/jboss/keycloak/standalone/data
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_STRICT: false
+      KC_HOSTNAME_STRICT_HTTPS: false
+      KC_HTTP_ENABLED: true
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://demo-portal-postgres:5432/keycloak
+      KC_DB_USERNAME: demouser
+      KC_DB_PASSWORD: demopass
