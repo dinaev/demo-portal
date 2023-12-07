@@ -48,8 +48,10 @@ if (app.Environment.IsDevelopment())
         options.EnablePersistAuthorization();
     });
 }
-
-app.UseHttpsRedirection();
+else
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 
